@@ -57,22 +57,23 @@ class _AddNotePageState extends State<AddNotePage> {
                   ),
                   //SizedBox(height: 15,),
                   Container(
-                    height: 300,
+                    height: 400,
                     alignment: Alignment.topRight,
                     child: ListView(
                       children: [
                         TextField(
                           controller: noteCont,
+                          maxLines: null,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Write your note",
                               hintStyle: TextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  //fontWeight: FontWeight.bold,
                                   color: Color(0xFFFFD9D9D9))),
                           style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                              //fontSize: 20,
+                              // fontWeight: FontWeight.bold,
                               color: Colors.black),
                           // onChanged: (value) {
                           //   descriptionText = value;

@@ -18,13 +18,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<String> str = [
-    "Note taking is, essentially, the practice of recording information captured from another source.",
-    "The definition of a note is a brief piece of writing usually recorded to inform or remind. An example of a note is someone leaving a piece of paper with buy milk written on it attached to the refrigerator. Note taking is, essentially, the practice of recording information captured from another source. Note taking is, essentially, the practice of recording information captured from another source. Note taking is, essentially, the practice of recording information captured from another source.",
-    "A title is one or more words used before or after a person's name, in certain contexts."
-  ];
 
-  List<String> titel = ["Titel", "Story", "Note"];
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           return GestureDetector(
                               onTap: () {
                                 //todo: "edit note"
-                                Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                      builder: (context) => AddNotePage()),
-                                );
+                                // Navigator.push(
+                                //   context,
+                                //   CupertinoPageRoute(
+                                //       builder: (context) => AddNotePage()),
+                                // );
                               },
                               onLongPress: () {
                                 //todo: "delete note"

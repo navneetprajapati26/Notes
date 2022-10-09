@@ -9,7 +9,7 @@ class ToDoDataBase {
   //run this whane first time ever opening the app
   void createInitialData() {
     toDoList = [
-      ["Titel", "Content"],
+      ["Notes App -v0.0.1", "This app use your local mobile storage for  your Notes on place of online cloud storage for providing more secure"],
     ];
   }
 

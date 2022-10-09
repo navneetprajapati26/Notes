@@ -19,11 +19,11 @@ class AddNotePage extends StatelessWidget {
   //
   // TextEditingController noteCont = TextEditingController();
 
+  FocusNode noteFoucus = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     double higit = MediaQuery.of(context).size.height;
-    String titelText = "titel";
-    String descriptionText = "note";
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFD9D9D9),
@@ -31,7 +31,7 @@ class AddNotePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: higit - 130,
+            height: higit - 100,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -46,6 +46,12 @@ class AddNotePage extends StatelessWidget {
                   ),
                   TextField(
                     controller: controllerTitel,
+                    autofocus: true,
+                    onSubmitted: (val){
+                      if(val!= ""){
+                        noteFoucus.requestFocus();
+                      }
+                    },
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Title",
@@ -69,6 +75,9 @@ class AddNotePage extends StatelessWidget {
                       children: [
                         TextField(
                           controller: controllerNote,
+
+                          focusNode: noteFoucus,
+
                           maxLines: null,
                           decoration: InputDecoration(
                               border: InputBorder.none,
@@ -95,18 +104,14 @@ class AddNotePage extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Btn(
-            btnName: "Save",
-            hight: 30,
-            whith: 120,
-            click: onSave
-            //     () {
-            //   Provider.of<NoteProvider>(context, listen: false)
-            //       .addNote(ttCont.text, noteCont.text);
-            //   Navigator.pop(context);
-            //
-            // },
-          )
+          Btn(btnName: "Save", hight: 30, whith: 120, click: onSave
+              //     () {
+              //   Provider.of<NoteProvider>(context, listen: false)
+              //       .addNote(ttCont.text, noteCont.text);
+              //   Navigator.pop(context);
+              //
+              // },
+              )
         ],
       ),
     );

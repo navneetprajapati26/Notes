@@ -91,9 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Baner(),
           DraggableScrollableSheet(
-              initialChildSize: 0.655,
+              initialChildSize: 0.677,
               //maxChildSize: 0.8,
-              minChildSize: 0.655,
+              minChildSize: 0.677,
               builder: (context, controller) => Container(
                     decoration: BoxDecoration(
                         color: Color(0xFFD9D9D9),

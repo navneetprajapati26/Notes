@@ -9,14 +9,14 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:notes/providers/note_providers.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async{
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.dark));
 
-  // await Hive.initFlutter();
-  // var box = await Hive.openBox("myBox");
+  await Hive.initFlutter();
+  var box = await Hive.openBox("myBox");
 
   runApp(const MyApp());
 }
@@ -27,15 +27,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<NoteProvider>(
-      create: (context)=> NoteProvider(),
-      child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: SplashScreen()),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: SplashScreen());
   }
 }

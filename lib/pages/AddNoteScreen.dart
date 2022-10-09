@@ -3,21 +3,27 @@ import 'package:notes/providers/note_providers.dart';
 import 'package:notes/utils/btn.dart';
 import 'package:provider/provider.dart';
 
-class AddNotePage extends StatefulWidget {
-  const AddNotePage({Key? key}) : super(key: key);
+class AddNotePage extends StatelessWidget {
+  final controllerTitel;
+  final controllerNote;
+  VoidCallback onSave;
 
-  @override
-  State<AddNotePage> createState() => _AddNotePageState();
-}
+  AddNotePage({
+    Key? key,
+    required this.controllerTitel,
+    required this.controllerNote,
+    required this.onSave,
+  }) : super(key: key);
 
-class _AddNotePageState extends State<AddNotePage> {
-  TextEditingController ttCont = TextEditingController();
-  TextEditingController noteCont = TextEditingController();
+  // TextEditingController ttCont = TextEditingController();
+  //
+  // TextEditingController noteCont = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double higit = MediaQuery.of(context).size.height;
-    String titelText="titel";
-    String descriptionText="note";
+    String titelText = "titel";
+    String descriptionText = "note";
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFD9D9D9),
@@ -25,7 +31,7 @@ class _AddNotePageState extends State<AddNotePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: higit - 100,
+            height: higit - 130,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -39,7 +45,7 @@ class _AddNotePageState extends State<AddNotePage> {
                     height: 30,
                   ),
                   TextField(
-                    controller: ttCont,
+                    controller: controllerTitel,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Title",
@@ -62,7 +68,7 @@ class _AddNotePageState extends State<AddNotePage> {
                     child: ListView(
                       children: [
                         TextField(
-                          controller: noteCont,
+                          controller: controllerNote,
                           maxLines: null,
                           decoration: InputDecoration(
                               border: InputBorder.none,
@@ -93,11 +99,13 @@ class _AddNotePageState extends State<AddNotePage> {
             btnName: "Save",
             hight: 30,
             whith: 120,
-            click: () {
-              Provider.of<NoteProvider>(context, listen: false)
-                  .addNote(ttCont.text, noteCont.text);
-              Navigator.pop(context);
-            },
+            click: onSave
+            //     () {
+            //   Provider.of<NoteProvider>(context, listen: false)
+            //       .addNote(ttCont.text, noteCont.text);
+            //   Navigator.pop(context);
+            //
+            // },
           )
         ],
       ),

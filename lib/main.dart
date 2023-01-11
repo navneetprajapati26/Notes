@@ -9,8 +9,8 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:notes/providers/note_providers.dart';
 import 'package:provider/provider.dart';
 
-void main() async{
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+void main() async {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.dark));

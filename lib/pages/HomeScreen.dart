@@ -1,16 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:notes/Models/note.dart';
 import 'package:notes/pages/AddNoteScreen.dart';
-import 'package:notes/providers/note_providers.dart';
 import 'package:notes/utils/baner.dart';
 import 'package:notes/utils/btn.dart';
-import 'package:notes/utils/handel.dart';
-import 'package:notes/utils/noteBox.dart';
-import 'package:provider/provider.dart';
-
 import '../Models/database.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,15 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // create New Task
   void createNewTask() {
-    // showDialog(
-    //     context: context,
-    //     builder: (context) {
-    //       return AddNotePage(
-    //         controllerTitel: _controllerTitel,
-    //         controllerNote: _controllerNote,
-    //         onSave: saveNewNote,
-    //       );
-    //     });
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -70,10 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 )));
   }
 
-  void editNote(int index) {
-    //todo edit note
-
-  }
 
   // delete Task
   void deleteTask(int index) {

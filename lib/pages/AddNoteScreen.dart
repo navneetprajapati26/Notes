@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes/providers/note_providers.dart';
 import 'package:notes/utils/btn.dart';
 import 'package:provider/provider.dart';
 
